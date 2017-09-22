@@ -1,3 +1,8 @@
+body {
+  font-size: 15px;
+  text-align: center;
+}
+
 #board {
   margin-top: 10px;
 }
@@ -5,4 +10,20 @@
 .box {
   border: 1px solid black;
   height: 150px;
+}
+
+div .row {
+  display: flex;
+}
+
+.row1 .box {
+  background-color: red;
+}
+
+.row2 .box {
+  background-color: blue;
+}
+
+.row3 .box {
+  background-color: green;
 }
