@@ -7,6 +7,26 @@ body {
   margin-top: 10px;
 }
 
+.scoreboard {
+  display: block;
+  border: 1px solid black;
+}
+
+h2 {
+  display: inline-block;
+  text-align: center;
+  margin: 10px 20px;
+  padding: 0;
+}
+
+.x-score {
+  float: left;
+}
+
+.o-score {
+  float: right;
+}
+
 .box {
   border: 1px solid black;
   height: 150px;
@@ -17,15 +37,15 @@ div .row {
 }
 
 .row1 .box {
-  background-color: red;
+  background-color: #aaaaaa;
 }
 
 .row2 .box {
-  background-color: blue;
+  background-color: #aaaaaa;
 }
 
 .row3 .box {
-  background-color: green;
+  background-color: #aaaaaa;
 }
 
 .resetButton {
