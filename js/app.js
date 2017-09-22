@@ -5,13 +5,20 @@
 
 // });
 
-var title = document.querySelector("h1");
+var title = document.querySelector('h1');
 // xTurn = true;
 console.log(title);
 
-title.addEventListener("click", function(){
+title.addEventListener('click', function(){
   // if (xTurn == true) {
   title.style.background = 'blue';
   // } else {
     // document.getElementById("box1A").innerHTML = "Goodbye World";
+});
+
+
+var button = document.querySelector('button');
+
+button.addEventListener('click', function(){
+  window.location.reload(true);
 });

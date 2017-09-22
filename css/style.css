@@ -1,7 +1,6 @@
 body {
   font-size: 15px;
   text-align: center;
-  color: grey;
 }
 
 #board {
@@ -27,4 +26,10 @@ div .row {
 
 .row3 .box {
   background-color: green;
+}
+
+.resetButton {
+  display: block;
+  margin: 20px;
+  padding: auto 50%;
 }
