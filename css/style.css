@@ -5,47 +5,22 @@ body {
 
 #board {
   margin-top: 10px;
-}
-
-/*.scoreboard {
+  width: 500px;
+  height: auto;
   display: block;
-  border: 1px solid black;
 }
-
-h2 {
-  border: 1px solid black;
-  display: inline-block;
-  text-align: center;
-  margin: 10px 20px;
-  padding: 0;
-}
-
-.x-score {
-  float: left;
-}
-
-.o-score {
-  float: right;
-}*/
 
 .box {
   border: 1px solid black;
   height: 150px;
+  width: 100%;
 }
 
 div .row {
   display: flex;
 }
 
-.row1 .box {
-  background-color: #aaaaaa;
-}
-
-.row2 .box {
-  background-color: #aaaaaa;
-}
-
-.row3 .box {
+.row1, .row2, .row3 .box {
   background-color: #aaaaaa;
 }
 
