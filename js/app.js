@@ -71,3 +71,14 @@ button.addEventListener('click', function(){
     //   console.log('end game');
     //   alert('end game');
     // }
+
+// var winPossibilities =
+// all same
+//   row1
+//   row2
+//   row3
+//   row a
+//   row b
+//   row c
+//   row1 a, row2 b, row3 c
+//   row1 c, row2 b, row3 a
