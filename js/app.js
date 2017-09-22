@@ -19,15 +19,9 @@ title.addEventListener('click', function(){
 });
 
 
-var button = document.querySelector('button');
-
-button.addEventListener('click', function(){
-  window.location.reload(true);
-});
-
-var counter = 0;
-var x = 'x'
-var o = 'o'
+var turnCounter = 0;
+var xImg = '<img src="../tic-tac-toe/images/x-resized.png">'
+var oImg = '<img src="../tic-tac-toe/images/o-resized.png">'
 var entry = ''
 
 // var boardRow = [...document.querySelectorAll('.row')];
@@ -36,30 +30,44 @@ var box = [...document.querySelectorAll('.col-md-4')];
 
 boardBox.forEach(function (clickBox) {
   clickBox.addEventListener('click', function (){
-    entry = x;
-    clickBox.innerHTML = '<img src="../tic-tac-toe/images/x-resized.png">';
-    console.log('box has been clicked');
-    clickBox.style.backgroundColor = 'white';
-  });
-});
-
-boardBox.forEach(function (turnX) {
-  turnX.addEventListener('click', function (){
-    entry = x;
-    box.innerText = 'meow';
-    console.log(entry);
-    counter++
-    if (counter === 9) {
-      console.log('end game');
-      alert('end game');
+    if (clickBox.innerHTML !== xImg && clickBox.innerHTML !== oImg) {
+      var turnEven = turnCounter % 2;
+      if (turnEven === 0) {
+        turnCounter++;
+        clickBox.innerHTML = xImg;
+        console.log('player x turn has been played');
+      } else {
+        turnCounter++;
+        clickBox.innerHTML = oImg;
+        console.log('player o turn has been played');
+      }
+      clickBox.style.backgroundColor = 'white';
+    } else {
+    alert('INVALID PLAY. TRY AGAIN.');
     }
   });
+  if (turnCounter == 9) {
+    alert('GAME OVER. DRAW.');
+  }
 });
 
-// boardBox.forEach(function (turnO) {
-//   turnO.addEventListener('click', function (){
-//     entry = o;
-//     box.innerHTML = entry;
-//     console.log(entry);
-//   });
+
+// var row1 = [...document.querySelectorAll('.row1')];
+// row1.forEach(function allSame(isSame) {
+//   if ()
 // });
+//
+
+//button stuff
+var button = document.querySelector('button');
+
+button.addEventListener('click', function(){
+  window.location.reload(true);
+});
+
+    // var counter = 0;
+    // counter++
+    // if (counter === 9) {
+    //   console.log('end game');
+    //   alert('end game');
+    // }
