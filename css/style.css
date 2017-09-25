@@ -30,7 +30,7 @@ div .row {
   background-color: #aaaaaa;
 }
 
-.resetButton {
+.resetButton, ul {
   display: block;
   margin: 20px;
   padding: auto 50%;
