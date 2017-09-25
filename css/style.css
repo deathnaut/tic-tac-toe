@@ -26,7 +26,7 @@ div .row {
   justify-content: center;
 }
 
-.row1, .row2, .row3 .box {
+.row1, .row2, .row3, .box {
   background-color: #aaaaaa;
 }
 
