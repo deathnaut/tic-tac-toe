@@ -3,7 +3,6 @@
   // all code to manipulate the DOM
   // goes inside this function
 
-// });
 
 console.log('start tic-tac-toe game');
 
@@ -16,41 +15,69 @@ var title = document.querySelector('h1');
 // });
 
 
-var turnCounter = 0;
 var winner;
-var x = '<img src="../tic-tac-toe/images/x-resized.png"> ';
-var o = '<img src="../tic-tac-toe/images/o-resized.png">';
-var clickBoxValue = document.querySelector('value');
+var x = '<img id="x" src="../tic-tac-toe/images/x-resized.png" alt="x">';
+var o = '<img id="o" src="../tic-tac-toe/images/o-resized.png" alt="o">';
 
 var boardRow = [...document.querySelectorAll('.row')];
 var boardBox = [...document.querySelectorAll('.box')];
 var box = [...document.querySelectorAll('.col-md-4')];
 
 
+var a1 = document.querySelector('.row1 .box .a');
+var a2 = document.querySelector('.row1 .box .b');
+var a3 = document.querySelector('.row1 .box .c');
+var b1 = document.querySelector('.row2 .box .a');
+var b2 = document.querySelector('.row2 .box .b');
+var b3 = document.querySelector('.row2 .box .c');
+var c1 = document.querySelector('.row3 .box .a');
+var c2 = document.querySelector('.row3 .box .b');
+var c3 = document.querySelector('.row3 .box .c');
+
+// var row1Win = [...document.querySelectorAll('row1 > img#xImg')];
+//
+// var j = 0;
+//
+// function checkIfWin(){
+//   // for (j = 0, j < turnCounter, j++) {
+//   //   if ( $( "#a1" ).attr( "value" ) == 'true' ) {
+//   //     console.log('a1 is x');
+//   //   } else {
+//   //     console.log('check your code');
+//   //   }
+//   if (row1Win.length === 3) {
+//       console.log('x wins');
+//   }
+// }
+
+var turnCounter = 0;
+
 boardBox.forEach(function (clickBox) {
-  clickBox.addEventListener('click', function (){
-    if (clickBox.innerHTML !== x && clickBox.innerHTML !== o) {
+  clickBox.addEventListener('click', function (event){
+    if (clickBox.innerHTML!==x && clickBox.innerHTML!==o) {
       var turnEven = turnCounter % 2;
       if (turnEven === 0) {
-        turnCounter++;
         clickBox.innerHTML = x;
-        // win.push('x');
         console.log(clickBox);
-        console.log('box value is now true aka x')
+        console.log('box value is now true aka x');
         console.log('player x turn has been played');
-      } else {
-        turnCounter++;
+        // checkIfWin();
+      } else if (turnEven === 1) {
         clickBox.innerHTML = o;
-        // win.push('o');
-        // console.log(win);
-        console.log('box value is now false aka o')
+        console.log(clickBox);
+        console.log('box value is now false aka o');
         console.log('player o turn has been played');
+        // checkIfWin();
+      }
+      turnCounter++;
+    } else {
+        alert('box is taken');
       }
       clickBox.style.backgroundColor = 'white';
-    }
-    if (turnCounter === 9) {
-        alert('GAME OVER: DRAW.');
-    }
+    // if (turnCounter === 9) {
+    //     alert('GAME OVER: DRAW.');
+    //   }
+    // need 'box is taken' func
   });
 });
 
@@ -81,6 +108,8 @@ party.addEventListener('click', function(){
     audio.play();
     console.log('i should change background & play music and other stuff');
 });
+
+// })
 
 
 // -------------------------------------------------------------------
@@ -140,9 +169,9 @@ party.addEventListener('click', function(){
 //   alert('player x wins');
 // }
 
-// var a1 = document.querySelector('.row1 .box .a');
-// var a2 = document.querySelector('.row1 .box .b');
-// var a3 = document.querySelector('.row1 .box .c');
+// var a1 = document.querySelector('#a1');
+// var a2 = document.querySelector('#a2');
+// var a3 = document.querySelector('#a3');
 // var b1 = document.querySelector('.row2 .box .a');
 // var b2 = document.querySelector('.row2 .box .b');
 // var b3 = document.querySelector('.row2 .box .c');
