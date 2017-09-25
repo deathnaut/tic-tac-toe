@@ -25,6 +25,11 @@ var box = [...document.querySelectorAll('.col-md-4')];
 
 var winner = null;
 
+function overlay() {
+  var overlay = document.getElementById("overlay");
+  overlay.style.visibility = (overlay.style.visibility == "visible") ? "hidden" : "visible";
+ }
+
 function checkIfWin(winner){
   console.log('run function checkIfWin');
   var win1AcrossX = [...document.querySelectorAll('.row1 > img#x')];
@@ -48,10 +53,10 @@ function checkIfWin(winner){
 
   if (win1AcrossX.length === 3 || win2AcrossX.length === 3 || win3AcrossX.length === 3 || win4UpDownX.length === 3 || win5UpDownX.length === 3 || win6UpDownX.length === 3 || win7DiagX.length === 3 || win8DiagX.length === 3) {
     winner = 'X WINS';
-    alert(winner);
+    overlay();
   } else if (win1AcrossO.length === 3 || win2AcrossO.length === 3 || win3AcrossO.length === 3 || win4UpDownO.length === 3 || win5UpDownO.length === 3 || win6UpDownO.length === 3 || win7DiagO.length === 3 || win8DiagO.length === 3) {
     winner = 'O WINS';
-    alert(winner);
+    overlay();
   };
   console.log('function end');
 };
@@ -95,6 +100,8 @@ button.addEventListener('click', function(){
   window.location.reload(true);
 });
 
+var links = [...document.querySelectorAll('li')];
+
 
 // PARTY MODE
 var party = document.querySelector('a');
@@ -102,9 +109,8 @@ var partyStarted = document.querySelector('#partyStarted');
 
 function triggerPartyMode (){
   var body = document.querySelector('body');
-
   title.style.color = 'white';
-  partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/rick-dance1.gif" alt = "lisa simpson dancing"></img>';
+  partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/squidward.gif" alt = "lisa simpson dancing"></img>';
   body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
   party.innerText = 'PARTY!';
   var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
