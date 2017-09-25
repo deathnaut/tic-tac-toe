@@ -112,7 +112,8 @@ function triggerPartyMode (){
   title.style.color = 'white';
   partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/rick-dance2.gif" alt = "lisa simpson dancing"></img>';
   body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
-  party.innerText = 'PARTY!';
+  party.innerText = 'IT\'S A PARTY!';
+  party.style.color = 'white';
   var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
   audio.loop = true;
   audio.play();
