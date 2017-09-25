@@ -16,8 +16,8 @@ var title = document.querySelector('h1');
 
 
 var winner;
-var x = '<img id="x" src="../tic-tac-toe/images/x-resized.png" alt="x">';
-var o = '<img id="o" src="../tic-tac-toe/images/o-resized.png" alt="o">';
+var x = '<img id="x" src="../tic-tac-toe/images/x-giphy.gif" alt="x">';
+var o = '<img id="o" src="../tic-tac-toe/images/o-giphy.gif" alt="o">';
 
 var boardRow = [...document.querySelectorAll('.row')];
 var boardBox = [...document.querySelectorAll('.box')];
@@ -25,7 +25,7 @@ var box = [...document.querySelectorAll('.col-md-4')];
 
 var winner = null;
 
-function checkIfWin(){
+function checkIfWin(winner){
   console.log('run function checkIfWin');
   var win1AcrossX = [...document.querySelectorAll('.row1 > img#x')];
   console.log(win1AcrossX.length);
@@ -47,11 +47,11 @@ function checkIfWin(){
   var win8DiagO = [...document.querySelectorAll('.diag2 > img#o')];
 
   if (win1AcrossX.length === 3 || win2AcrossX.length === 3 || win3AcrossX.length === 3 || win4UpDownX.length === 3 || win5UpDownX.length === 3 || win6UpDownX.length === 3 || win7DiagX.length === 3 || win8DiagX.length === 3) {
-    console.log('win req met');
-    alert('PLAYER X WINS!');
+    winner = 'X WINS';
+    alert(winner);
   } else if (win1AcrossO.length === 3 || win2AcrossO.length === 3 || win3AcrossO.length === 3 || win4UpDownO.length === 3 || win5UpDownO.length === 3 || win6UpDownO.length === 3 || win7DiagO.length === 3 || win8DiagO.length === 3) {
-    console.log('win req met');
-    alert('PLAYER O WINS!');
+    winner = 'O WINS';
+    alert(winner);
   };
   console.log('function end');
 };
@@ -78,7 +78,7 @@ boardBox.forEach(function (clickBox) {
     } else {
         alert('box is taken');
       }
-      clickBox.style.backgroundColor = 'white';
+      // clickBox.style.backgroundColor = 'white';
     if (turnCounter === 9) {
       alert('GAME OVER: DRAW.');
     }
@@ -89,7 +89,7 @@ boardBox.forEach(function (clickBox) {
 
 
 //button stuff
-var button = document.querySelector('button');
+var button = document.querySelector('.resetButton');
 
 button.addEventListener('click', function(){
   window.location.reload(true);
@@ -100,18 +100,21 @@ button.addEventListener('click', function(){
 var party = document.querySelector('a');
 var partyStarted = document.querySelector('#partyStarted');
 
-party.addEventListener('click', function(){
-    var body = document.querySelector('body');
+function triggerPartyMode (){
+  var body = document.querySelector('body');
 
-    title.style.color = 'white';
-    partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/rick-dance1.gif" alt = "lisa simpson dancing"></img>';
-    body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
-    party.innerText = 'PARTY!';
-    var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
-    audio.loop = true;
-    audio.play();
-    console.log('i should change background & play music and other stuff');
-});
+  title.style.color = 'white';
+  partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/rick-dance1.gif" alt = "lisa simpson dancing"></img>';
+  body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
+  party.innerText = 'PARTY!';
+  var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
+  audio.loop = true;
+  audio.play();
+  console.log('i should change background & play music and other stuff');
+  party.removeEventListener('click', triggerPartyMode);
+}
+
+party.addEventListener('click', triggerPartyMode);
 
 // })
 
