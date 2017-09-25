@@ -107,6 +107,8 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
 
 var party = document.querySelector('a');
 
+var partyStarted = document.querySelector('#partyStarted');
+
 party.addEventListener('click', function(){
     var body = document.querySelector('body');
     // color = colors.shift();
@@ -119,8 +121,7 @@ party.addEventListener('click', function(){
     //   }
     // }
     title.style.color = colors[0];
-
-    var ravePic = '<img src="../tic-tac-toe/images/partytime.png" alt = "kitty party"></img>';
+    partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/lisa-dancing.gif" alt = "lisa simpson dancing"></img>';
     body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
     // boardBox.style.backgroundColor = 'rgba(0,0,0,0)';
     party.innerText = 'PARTY!';

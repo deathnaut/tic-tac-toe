@@ -1,6 +1,7 @@
 body {
   font-size: 15px;
   text-align: center;
+  font-family: 'Audiowide', cursive;
 }
 
 #board {
@@ -33,4 +34,8 @@ div .row {
   display: block;
   margin: 20px;
   padding: auto 50%;
+}
+
+ul {
+  list-style: none;
 }
