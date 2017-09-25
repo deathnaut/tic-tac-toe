@@ -103,17 +103,27 @@ button.addEventListener('click', function(){
   window.location.reload(true);
 });
 
-
-var extreme = document.querySelector('a');
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
 
-extreme.addEventListener('click', function(){
+var party = document.querySelector('a');
+
+party.addEventListener('click', function(){
     var body = document.querySelector('body');
+    // color = colors.shift();
+    // colors.push(color);
+    // body.style.backgroundColor = changeColors;
+    // function changeColors(){
+    //   for (var i = 0; i < colors.length; i++) {
+    //     title.style.color = colors[i];
+    //     setTimeout(changeColors, 1000);
+    //   }
+    // }
+    title.style.color = colors[0];
 
-    color = colors.shift();
-    colors.push(color);
-    body.style.backgroundColor = color;
-
+    var ravePic = '<img src="../tic-tac-toe/images/partytime.png" alt = "kitty party"></img>';
+    body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
+    // boardBox.style.backgroundColor = 'rgba(0,0,0,0)';
+    party.innerText = 'PARTY!';
     var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
     audio.loop = true;
     audio.play();
