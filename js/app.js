@@ -125,7 +125,7 @@ button.addEventListener('click', function(){
 // true reset?
 // function resetGame() {
 //
-}
+// }
 
 
 
