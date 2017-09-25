@@ -19,6 +19,28 @@ var winner;
 var x = '<img id="x" src="../tic-tac-toe/images/x-giphy.gif" alt="x">';
 var o = '<img id="o" src="../tic-tac-toe/images/o-giphy.gif" alt="o">';
 
+// PARTY MODE
+var party = document.querySelector('a');
+var partyStarted = document.querySelector('#partyStarted');
+
+function triggerPartyMode (){
+  var body = document.querySelector('body');
+  title.style.color = 'white';
+  x = '<img id="x" src="../tic-tac-toe/images/x-shark.gif" alt="x">';
+  o = '<img id="o" src="../tic-tac-toe/images/o-dance.gif" alt="o">';
+  partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/rick-dance2.gif" alt = "lisa simpson dancing"></img>';
+  body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
+  party.innerText = 'IT\'S A PARTY!';
+  party.style.color = 'white';
+  var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
+  audio.loop = true;
+  audio.play();
+  console.log('i should change background & play music and other stuff');
+  party.removeEventListener('click', triggerPartyMode);
+}
+
+party.addEventListener('click', triggerPartyMode);
+
 var boardRow = [...document.querySelectorAll('.row')];
 var boardBox = [...document.querySelectorAll('.box')];
 var box = [...document.querySelectorAll('.col-md-4')];
@@ -100,28 +122,13 @@ button.addEventListener('click', function(){
   window.location.reload(true);
 });
 
-var links = [...document.querySelectorAll('li')];
-
-
-// PARTY MODE
-var party = document.querySelector('a');
-var partyStarted = document.querySelector('#partyStarted');
-
-function triggerPartyMode (){
-  var body = document.querySelector('body');
-  title.style.color = 'white';
-  partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/rick-dance2.gif" alt = "lisa simpson dancing"></img>';
-  body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
-  party.innerText = 'IT\'S A PARTY!';
-  party.style.color = 'white';
-  var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
-  audio.loop = true;
-  audio.play();
-  console.log('i should change background & play music and other stuff');
-  party.removeEventListener('click', triggerPartyMode);
+// true reset?
+// function resetGame() {
+//
 }
 
-party.addEventListener('click', triggerPartyMode);
+
+
 
 // })
 
