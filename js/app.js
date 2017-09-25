@@ -110,7 +110,7 @@ var partyStarted = document.querySelector('#partyStarted');
 function triggerPartyMode (){
   var body = document.querySelector('body');
   title.style.color = 'white';
-  partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/squidward.gif" alt = "lisa simpson dancing"></img>';
+  partyStarted.innerHTML = '<img id ="partyStarted" src="../tic-tac-toe/images/rick-dance2.gif" alt = "lisa simpson dancing"></img>';
   body.style.backgroundImage = "url('../tic-tac-toe/images/partytime.gif')";
   party.innerText = 'PARTY!';
   var audio = new Audio('400611__valo__trance-bass-and-drums-loop.mp3');
